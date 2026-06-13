@@ -45,7 +45,7 @@ export default function Home() {
                 key={i}
                 className="relative aspect-[2/3] overflow-hidden rounded-2xl bg-zinc-900"
               >
-                <Image src={src} alt="" fill sizes="33vw" className="object-cover" />
+                <Image src={src} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
               </div>
             ))}
           </div>

@@ -16,6 +16,14 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock background scroll while the mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
@@ -66,7 +74,7 @@ export function Navigation() {
         <button
           type="button"
           aria-label="Toggle menu"
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="-mr-2 flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span
