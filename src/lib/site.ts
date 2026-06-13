@@ -15,6 +15,8 @@ export const site = {
   social: [
     { label: "Instagram", href: "https://instagram.com/kitamenofficial" },
     { label: "Facebook", href: "https://facebook.com/kitamen" },
+    { label: "TikTok", href: "https://www.tiktok.com/@kitamen.my" },
+    { label: "YouTube", href: "https://www.youtube.com/@Kitamen" },
   ],
 };
 
