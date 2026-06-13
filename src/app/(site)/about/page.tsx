@@ -74,14 +74,18 @@ export default function AboutPage() {
             Command &amp; dominate. A tight crew of operators, broadcasters, and
             builders behind every KITAMEN production.
           </p>
-          <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-4">
-            {team.map((member) => (
-              <div key={member.name}>
-                <div className="aspect-square w-full rounded-2xl border border-zinc-800 bg-zinc-900" />
-                <p className="text-h4 mt-4 text-white">{member.name}</p>
-                <p className="text-body-sm text-zinc-500">{member.role}</p>
-              </div>
-            ))}
+          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
+            {team
+              .filter((member) => ["Hazman", "Riaz"].includes(member.name))
+              .map((member) => (
+                <div
+                  key={member.name}
+                  className="border-t border-zinc-800 pt-6"
+                >
+                  <p className="text-h3 text-white">{member.name}</p>
+                  <p className="text-h6sm mt-2 text-zinc-500">{member.role}</p>
+                </div>
+              ))}
           </div>
         </div>
       </section>
