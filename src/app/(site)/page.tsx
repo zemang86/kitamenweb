@@ -6,6 +6,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Testimonials } from "@/components/Testimonials";
 import { CTASection } from "@/components/CTASection";
+import { FadeIn } from "@/components/home2/FadeIn";
 import { works } from "@/lib/works";
 import { services } from "@/lib/site";
 
@@ -27,7 +28,7 @@ export default function Home() {
             <div className="md:sticky md:top-28 md:self-start">
               <HeadingTitle title="Who We Are" color="rgb(255,255,255)" />
             </div>
-            <div className="flex flex-col gap-10">
+            <FadeIn className="flex flex-col gap-10" delay={0.1}>
               <p className="text-body text-zinc-300">
                 We&rsquo;re gamers first, founders second. We build what
                 we&rsquo;d play&mdash;not just what sells. After years fixing
@@ -37,23 +38,24 @@ export default function Home() {
                 precision.
               </p>
               <Button label="About Us" href="/about" className="w-fit" />
-            </div>
+            </FadeIn>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
             {aboutImages.map((src, i) => (
-              <div
+              <FadeIn
                 key={i}
+                delay={i * 0.1}
                 className="relative aspect-[2/3] overflow-hidden rounded-2xl bg-zinc-900"
               >
                 <Image src={src} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
-              </div>
+              </FadeIn>
             ))}
           </div>
         </section>
 
         {/* Signature Campaigns */}
         <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
-          <div className="mx-auto max-w-[800px] text-center">
+          <FadeIn className="mx-auto max-w-[800px] text-center">
             <HeadingTitle title="Signature Campaigns" />
             <p className="text-body mt-8 text-zinc-300">
               A curated portfolio of campaigns that shaped Malaysia&rsquo;s
@@ -61,10 +63,12 @@ export default function Home() {
               resonant brand activations. Every project reflects our precision,
               playmaking, and pursuit of esports excellence.
             </p>
-          </div>
+          </FadeIn>
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2">
-            {works.slice(0, 4).map((w) => (
-              <ProjectCard key={w.slug} work={w} />
+            {works.slice(0, 4).map((w, i) => (
+              <FadeIn key={w.slug} delay={(i % 2) * 0.1}>
+                <ProjectCard work={w} />
+              </FadeIn>
             ))}
           </div>
           <div className="mt-16 flex justify-center">
@@ -74,7 +78,10 @@ export default function Home() {
 
         {/* Designed to Deliver — Services */}
         <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
-          <div className="mx-auto max-w-[800px] pb-24 text-center md:sticky md:top-28">
+          <FadeIn
+            y={0}
+            className="mx-auto max-w-[800px] pb-24 text-center md:sticky md:top-28"
+          >
             <HeadingTitle title="Designed to Deliver" />
             <p className="text-body mt-8 text-zinc-300">
               Each KITAMEN system comes equipped with a curated selection of
@@ -82,9 +89,11 @@ export default function Home() {
               displays&mdash;including PlayStation 5, Xbox Series X, Nintendo
               Switch, and other competitive-ready hardware. We deploy only what
               performs&mdash;based on audience type, game format, and space
-              requirements. Nothing is random. Everything is tested.
+              requirements. Nothing is random. Everything is tested. Need
+              something specific? We&rsquo;ll configure the right gear for your
+              experience&mdash;quietly and precisely.
             </p>
-          </div>
+          </FadeIn>
           <div className="mx-auto max-w-[1100px]">
             {services.map((service, i) => (
               <ServiceCard key={service.title} service={service} index={i} />
@@ -94,10 +103,12 @@ export default function Home() {
 
         {/* Chosen by Leaders — Testimonials */}
         <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
-          <div className="mb-16 flex justify-center">
+          <FadeIn className="mb-16 flex justify-center">
             <HeadingTitle title="Chosen by Leaders." />
-          </div>
-          <Testimonials />
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <Testimonials />
+          </FadeIn>
         </section>
       </div>
 

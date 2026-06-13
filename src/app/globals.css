@@ -3,6 +3,8 @@
 @theme {
   --font-mono: var(--font-jetbrains), ui-monospace, monospace;
   --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  /* KITAMEN brand magenta (sampled from the logo) — used sparingly as an accent */
+  --color-accent: #ff007f;
 }
 
 :root {

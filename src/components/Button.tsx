@@ -16,7 +16,7 @@ export function Button({ label, href, className = "" }: ButtonProps) {
   );
 
   const classes =
-    "group inline-flex items-center gap-3 rounded-full border border-zinc-700 bg-transparent px-6 py-3 text-white transition-colors duration-300 hover:bg-white hover:text-black hover:border-white " +
+    "group inline-flex items-center gap-3 rounded-full border border-zinc-700 bg-transparent px-6 py-3 text-white transition-colors duration-300 hover:border-accent hover:bg-accent hover:text-white " +
     className;
 
   if (isExternal) {

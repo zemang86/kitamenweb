@@ -57,7 +57,7 @@ export function Navigation() {
                 key={item.href}
                 href={item.href}
                 rel="noreferrer"
-                className="text-h6sm text-zinc-300 transition-colors hover:text-white"
+                className="text-h6sm text-zinc-300 transition-colors hover:text-accent"
               >
                 {item.label}
               </a>
@@ -65,7 +65,7 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-h6sm text-zinc-300 transition-colors hover:text-white"
+                className="text-h6sm text-zinc-300 transition-colors hover:text-accent"
               >
                 {item.label}
               </Link>
@@ -75,7 +75,7 @@ export function Navigation() {
             href={site.talkToUs}
             target="_blank"
             rel="noreferrer"
-            className="text-h6sm rounded-full border border-zinc-700 px-5 py-2.5 text-white transition-colors hover:bg-white hover:text-black"
+            className="text-h6sm rounded-full border border-zinc-700 px-5 py-2.5 text-white transition-colors hover:border-accent hover:bg-accent hover:text-white"
           >
             Talk To Us
           </a>
