@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Poppins, Kanit } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { site } from "@/lib/site";
 import "./globals.css";
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -99,6 +102,7 @@ export default function RootLayout({
         />
         {children}
       </body>
+      {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }
