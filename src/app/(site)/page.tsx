@@ -26,7 +26,11 @@ export default function Home() {
         <section className="relative border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
             <div className="md:sticky md:top-28 md:self-start">
-              <HeadingTitle title="Who We Are" color="rgb(255,255,255)" />
+              <HeadingTitle
+                title="Who We Are"
+                color="rgb(255,255,255)"
+                index="01"
+              />
             </div>
             <FadeIn className="flex flex-col gap-10" delay={0.1}>
               <p className="text-body text-zinc-300">
@@ -56,7 +60,7 @@ export default function Home() {
         {/* Signature Campaigns */}
         <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
           <FadeIn className="mx-auto max-w-[800px] text-center">
-            <HeadingTitle title="Signature Campaigns" />
+            <HeadingTitle title="Signature Campaigns" index="02" />
             <p className="text-body mt-8 text-zinc-300">
               A curated portfolio of campaigns that shaped Malaysia&rsquo;s
               esports narrative&mdash;from high-stakes tournaments to culturally
@@ -82,7 +86,7 @@ export default function Home() {
             y={0}
             className="mx-auto max-w-[800px] pb-24 text-center md:sticky md:top-28"
           >
-            <HeadingTitle title="Designed to Deliver" />
+            <HeadingTitle title="Designed to Deliver" index="03" />
             <p className="text-body mt-8 text-zinc-300">
               Each KITAMEN system comes equipped with a curated selection of
               industry-standard gaming consoles, peripherals, and
@@ -103,8 +107,8 @@ export default function Home() {
 
         {/* Chosen by Leaders — Testimonials */}
         <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
-          <FadeIn className="mb-16 flex justify-center">
-            <HeadingTitle title="Chosen by Leaders." />
+          <FadeIn className="mb-16 text-center">
+            <HeadingTitle title="Chosen by Leaders." index="04" />
           </FadeIn>
           <FadeIn delay={0.1}>
             <Testimonials />

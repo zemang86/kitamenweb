@@ -24,6 +24,7 @@ export function Hero() {
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const subRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,6 +50,13 @@ export function Hero() {
       if (contentRef.current) {
         contentRef.current.style.opacity = String(opacity);
         contentRef.current.style.transform = `scale(${scale})`;
+      }
+
+      // Sub-headings lag the wordmark, then rise into place
+      const sub = range(progress, 0.18, 0.5);
+      if (subRef.current) {
+        subRef.current.style.opacity = String(sub);
+        subRef.current.style.transform = `translateY(${(1 - sub) * 24}px)`;
       }
 
       // Scroll hint fades out quickly
@@ -77,7 +85,11 @@ export function Hero() {
           <h1 className="text-brand leading-none text-black [text-shadow:0_2px_30px_rgba(228,228,231,0.6)]">
             KITAMEN
           </h1>
-          <div className="mt-8 grid max-w-[1100px] grid-cols-1 gap-6 md:grid-cols-2">
+          <div
+            ref={subRef}
+            style={{ opacity: 0, transform: "translateY(24px)" }}
+            className="mt-8 grid max-w-[1100px] grid-cols-1 gap-6 md:grid-cols-2"
+          >
             <p className="text-h5 text-black md:text-right">
               Boutique esports agency based in Malaysia
             </p>
@@ -120,6 +132,9 @@ export function Hero() {
             <span className="block h-2 w-2 animate-bounce rounded-full bg-black" />
           </div>
         </div>
+
+        {/* Film-grain texture overlay */}
+        <div className="hero-grain pointer-events-none absolute inset-0 z-40" />
       </div>
     </section>
   );
