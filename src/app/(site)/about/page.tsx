@@ -4,10 +4,19 @@ import { HeadingTitle } from "@/components/HeadingTitle";
 import { CTASection } from "@/components/CTASection";
 import { team } from "@/lib/site";
 
+const aboutDescription =
+  "Since 2015, KITAMEN has produced 220+ national esports events and distributed RM2 million in prize pools. Gamers first, founders second.";
+
 export const metadata: Metadata = {
-  title: "About — KITAMEN",
-  description:
-    "Since 2015, KITAMEN has produced 220+ national esports events and distributed RM2 million in prize pools. Gamers first, founders second.",
+  title: "About",
+  description: aboutDescription,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About — KITAMEN",
+    description: aboutDescription,
+    url: "/about",
+  },
+  twitter: { title: "About — KITAMEN", description: aboutDescription },
 };
 
 const stats = [

@@ -4,10 +4,19 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { CTASection } from "@/components/CTASection";
 import { works } from "@/lib/works";
 
+const worksDescription =
+  "Featured esports campaigns and activations by KITAMEN. Built by leaders, trusted by giants.";
+
 export const metadata: Metadata = {
-  title: "Works — KITAMEN",
-  description:
-    "Featured esports campaigns and activations by KITAMEN. Built by leaders, trusted by giants.",
+  title: "Works",
+  description: worksDescription,
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Works — KITAMEN",
+    description: worksDescription,
+    url: "/projects",
+  },
+  twitter: { title: "Works — KITAMEN", description: worksDescription },
 };
 
 export default function ProjectsPage() {

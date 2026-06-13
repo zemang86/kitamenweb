@@ -3,10 +3,19 @@ import { HeadingTitle } from "@/components/HeadingTitle";
 import { Button } from "@/components/Button";
 import { site } from "@/lib/site";
 
+const contactDescription =
+  "Get in touch with KITAMEN. Engineer the next reality for your brand or event.";
+
 export const metadata: Metadata = {
-  title: "Contact — KITAMEN",
-  description:
-    "Get in touch with KITAMEN. Engineer the next reality for your brand or event.",
+  title: "Contact",
+  description: contactDescription,
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact — KITAMEN",
+    description: contactDescription,
+    url: "/contact",
+  },
+  twitter: { title: "Contact — KITAMEN", description: contactDescription },
 };
 
 export default function ContactPage() {

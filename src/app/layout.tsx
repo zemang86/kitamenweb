@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Poppins, Kanit } from "next/font/google";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -21,14 +22,64 @@ const kanit = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "KITAMEN — Boutique Esports Agency",
-  description:
-    "KITAMEN designs structured esports experiences through PlayPod (console & sim setups), PlaySuite (fully managed tournaments), and PlayLab (bespoke co-creations). Trusted by brands, agencies, and institutions seeking precision in play.",
+  metadataBase: new URL(site.url),
+  title: {
+    default: "KITAMEN — Boutique Esports Agency",
+    template: "%s — KITAMEN",
+  },
+  description: site.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    siteName: site.name,
+    title: "KITAMEN — Boutique Esports Agency",
+    description: site.description,
+    url: site.url,
+    locale: "en_MY",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KITAMEN — Boutique Esports Agency",
+    description: site.description,
+  },
   icons: {
     icon: "/logo/android-chrome-192x192.png",
     shortcut: "/logo/android-chrome-192x192.png",
     apple: "/logo/android-chrome-192x192.png",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      url: site.url,
+      logo: `${site.url}/logo/android-chrome-192x192.png`,
+      description: site.description,
+      email: site.email,
+      foundingDate: "2015",
+      areaServed: "MY",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "MY",
+      },
+      sameAs: site.social.map((s) => s.href),
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      description: site.description,
+      publisher: { "@id": `${site.url}/#organization` },
+      inLanguage: "en-MY",
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -41,7 +92,13 @@ export default function RootLayout({
       lang="en"
       className={`${jetbrainsMono.variable} ${poppins.variable} ${kanit.variable} antialiased`}
     >
-      <body className="bg-black text-white">{children}</body>
+      <body className="bg-black text-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

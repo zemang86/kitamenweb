@@ -1,6 +1,10 @@
 export const site = {
   name: "KITAMEN",
+  url: "https://home.kitamen.my",
   email: "Hello@kitamen.my",
+  tagline: "Boutique Esports Agency",
+  description:
+    "KITAMEN is a boutique esports agency in Malaysia designing structured esports experiences through PlayPod (console & sim setups), PlaySuite (fully managed tournaments), and PlayLab (bespoke co-creations). Trusted by brands, agencies, and institutions seeking precision in play.",
   talkToUs: "https://framer.link/madebythanh",
   nav: [
     { label: "Works", href: "/projects" },
@@ -10,7 +14,6 @@ export const site = {
   social: [
     { label: "Instagram", href: "https://instagram.com/kitamenofficial" },
     { label: "Twitter", href: "https://x.com/kitamenofficial" },
-    { label: "Behance", href: "https://behance.net" },
   ],
 };
 
