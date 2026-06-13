@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import { ImageStrip } from "@/components/ImageStrip";
 import { works } from "@/lib/works";
+import { site } from "@/lib/site";
 
 const stripImages = works.map((w) => w.mainImage);
 
@@ -14,7 +15,7 @@ export function CTASection() {
           Next Reality
         </h2>
         <div className="mt-10">
-          <Button label="Let's Talk" href="https://framer.link/madebythanh" />
+          <Button label="Let's Talk" href={site.talkToUs} />
         </div>
       </div>
       <div className="mt-20">
