@@ -26,42 +26,43 @@ body {
 --------------------------------------------------------------------------- */
 @layer components {
   .text-brand {
-    font-family: var(--font-mono);
-    font-weight: 700;
+    font-family: var(--font-kanit);
+    font-weight: 800;
     font-size: 180px;
-    line-height: 1.1em;
-    letter-spacing: -0.04em;
+    line-height: 1em;
+    letter-spacing: -0.03em;
     text-transform: uppercase;
   }
   .text-h1 {
-    font-family: var(--font-mono);
-    font-weight: 600;
+    font-family: var(--font-kanit);
+    font-weight: 700;
     font-size: 96px;
-    line-height: 1.1em;
+    line-height: 1.05em;
     letter-spacing: -0.02em;
     text-transform: uppercase;
   }
   .text-h2 {
-    font-family: var(--font-mono);
+    font-family: var(--font-kanit);
     font-weight: 700;
     font-size: 72px;
-    line-height: 1.2em;
+    line-height: 1.1em;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
   }
   .text-h3 {
-    font-family: var(--font-mono);
-    font-weight: 700;
+    font-family: var(--font-kanit);
+    font-weight: 600;
     font-size: 40px;
-    line-height: 1.2em;
-    letter-spacing: -0.02em;
+    line-height: 1.15em;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
   }
   .text-h4 {
-    font-family: var(--font-mono);
-    font-weight: 500;
+    font-family: var(--font-kanit);
+    font-weight: 600;
     font-size: 24px;
     line-height: 1.2em;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     text-transform: uppercase;
   }
   .text-h5 {
@@ -129,6 +130,20 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
+   /home2 — "Jack" prompt aesthetic (Kanit + grayscale gradient headings)
+--------------------------------------------------------------------------- */
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.font-kanit {
+  font-family: var(--font-kanit), sans-serif;
+}
+
+/* ---------------------------------------------------------------------------
    Rich text (CMS formattedText) rendering
 --------------------------------------------------------------------------- */
 .rich-text {
@@ -141,18 +156,18 @@ body {
   margin-top: 1.25em;
 }
 .rich-text h2 {
-  font-family: var(--font-mono);
+  font-family: var(--font-kanit);
   font-weight: 700;
   font-size: clamp(26px, 4vw, 40px);
-  line-height: 1.2em;
-  letter-spacing: -0.02em;
+  line-height: 1.15em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: #fff;
   margin-top: 1.5em;
 }
 .rich-text h3 {
-  font-family: var(--font-mono);
-  font-weight: 500;
+  font-family: var(--font-kanit);
+  font-weight: 600;
   font-size: 24px;
   text-transform: uppercase;
   color: #fff;

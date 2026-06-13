@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Poppins } from "next/font/google";
+import { JetBrains_Mono, Poppins, Kanit } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "@/components/Navigation";
-import { Footer } from "@/components/Footer";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -14,6 +12,12 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+});
+
+const kanit = Kanit({
+  variable: "--font-kanit",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -35,13 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jetbrainsMono.variable} ${poppins.variable} antialiased`}
+      className={`${jetbrainsMono.variable} ${poppins.variable} ${kanit.variable} antialiased`}
     >
-      <body className="bg-black text-white">
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body className="bg-black text-white">{children}</body>
     </html>
   );
 }
