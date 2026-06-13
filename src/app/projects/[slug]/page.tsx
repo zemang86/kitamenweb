@@ -1,0 +1,126 @@
+import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { CTASection } from "@/components/CTASection";
+import { works, getWork } from "@/lib/works";
+
+export function generateStaticParams() {
+  return works.map((w) => ({ slug: w.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const work = getWork(slug);
+  if (!work) return { title: "Work — KITAMEN" };
+  return {
+    title: `${work.title} — KITAMEN`,
+    description: `${work.category} · ${work.client} · ${work.year}`,
+  };
+}
+
+export default async function ProjectDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const work = getWork(slug);
+  if (!work) notFound();
+
+  const index = works.findIndex((w) => w.slug === slug);
+  const next = works[(index + 1) % works.length];
+
+  const gallery = [work.mainImage, work.hoverImage, ...work.gallery];
+
+  return (
+    <>
+      <article className="px-6 pb-24 pt-40 md:px-10 md:pt-48">
+        <div className="mx-auto max-w-[1100px]">
+          <Link
+            href="/projects"
+            className="text-h6sm text-zinc-500 hover:text-white"
+          >
+            ← All Works
+          </Link>
+
+          <h1 className="text-h1 mt-8 text-white">{work.title}</h1>
+
+          {/* Meta row */}
+          <dl className="mt-12 grid grid-cols-2 gap-8 border-y border-zinc-800 py-8 md:grid-cols-4">
+            <Meta label="Category" value={work.category} />
+            <Meta label="Product Type" value={work.productType} />
+            <Meta label="Client" value={work.client} />
+            <Meta label="Year" value={work.year} />
+          </dl>
+
+          {/* Hero image */}
+          <div className="relative mt-12 aspect-[16/9] w-full overflow-hidden rounded-3xl bg-zinc-900">
+            <Image
+              src={work.mainImage}
+              alt={work.title}
+              fill
+              sizes="(max-width: 1100px) 100vw, 1100px"
+              className="object-cover"
+              priority
+            />
+          </div>
+
+          {/* Rich content */}
+          <div
+            className="rich-text mx-auto mt-16 max-w-[760px]"
+            dangerouslySetInnerHTML={{ __html: work.content }}
+          />
+
+          {/* Gallery */}
+          <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {gallery.map((src, i) => (
+              <div
+                key={i}
+                className={`relative overflow-hidden rounded-2xl bg-zinc-900 ${
+                  i % 3 === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
+                }`}
+              >
+                <Image
+                  src={src}
+                  alt={`${work.title} ${i + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </article>
+
+      {/* Next project */}
+      <section className="border-t border-zinc-800 px-6 py-16 md:px-10">
+        <div className="mx-auto flex max-w-[1100px] items-center justify-between">
+          <span className="text-h6sm text-zinc-500">Next Project</span>
+          <Link
+            href={`/projects/${next.slug}`}
+            className="text-h3 text-white transition-colors hover:text-zinc-400"
+          >
+            {next.title} →
+          </Link>
+        </div>
+      </section>
+
+      <CTASection />
+    </>
+  );
+}
+
+function Meta({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="text-h6sm text-zinc-500">{label}</dt>
+      <dd className="text-body-sm mt-2 text-zinc-200">{value}</dd>
+    </div>
+  );
+}

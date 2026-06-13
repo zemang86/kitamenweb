@@ -1,65 +1,107 @@
 import Image from "next/image";
+import { Hero } from "@/components/Hero";
+import { HeadingTitle } from "@/components/HeadingTitle";
+import { Button } from "@/components/Button";
+import { ProjectCard } from "@/components/ProjectCard";
+import { ServiceCard } from "@/components/ServiceCard";
+import { Testimonials } from "@/components/Testimonials";
+import { CTASection } from "@/components/CTASection";
+import { works } from "@/lib/works";
+import { services } from "@/lib/site";
+
+const aboutImages = [
+  "https://framerusercontent.com/images/aBIkjM9CWNyUGolRVq5Ppbad7s.jpg",
+  "https://framerusercontent.com/images/ZMV2sMmF0FMoZArg7GegLWpHI0I.jpg",
+  "https://framerusercontent.com/images/EJMgzshMWaZFGRSJc4jXZjA5ZkU.png",
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Hero />
+
+      <div className="mx-auto w-full max-w-[1600px]">
+        {/* Who We Are */}
+        <section className="relative border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+            <div className="md:sticky md:top-28 md:self-start">
+              <HeadingTitle title="Who We Are" color="rgb(255,255,255)" />
+            </div>
+            <div className="flex flex-col gap-10">
+              <p className="text-body text-zinc-300">
+                We&rsquo;re gamers first, founders second. We build what
+                we&rsquo;d play&mdash;not just what sells. After years fixing
+                half-baked events by middlemen, clients now return&mdash;not for
+                price, but for outcomes. KITAMEN isn&rsquo;t your average esports
+                vendor. We set standards, shape culture, and execute with
+                precision.
+              </p>
+              <Button label="About Us" href="/about" className="w-fit" />
+            </div>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {aboutImages.map((src, i) => (
+              <div
+                key={i}
+                className="relative aspect-[2/3] overflow-hidden rounded-2xl bg-zinc-900"
+              >
+                <Image src={src} alt="" fill sizes="33vw" className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Signature Campaigns */}
+        <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[800px] text-center">
+            <HeadingTitle title="Signature Campaigns" />
+            <p className="text-body mt-8 text-zinc-300">
+              A curated portfolio of campaigns that shaped Malaysia&rsquo;s
+              esports narrative&mdash;from high-stakes tournaments to culturally
+              resonant brand activations. Every project reflects our precision,
+              playmaking, and pursuit of esports excellence.
+            </p>
+          </div>
+          <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2">
+            {works.slice(0, 4).map((w) => (
+              <ProjectCard key={w.slug} work={w} />
+            ))}
+          </div>
+          <div className="mt-16 flex justify-center">
+            <Button label="More Works" href="/projects" />
+          </div>
+        </section>
+
+        {/* Designed to Deliver — Services */}
+        <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
+          <div className="mx-auto max-w-[800px] pb-24 text-center md:sticky md:top-28">
+            <HeadingTitle title="Designed to Deliver" />
+            <p className="text-body mt-8 text-zinc-300">
+              Each KITAMEN system comes equipped with a curated selection of
+              industry-standard gaming consoles, peripherals, and
+              displays&mdash;including PlayStation 5, Xbox Series X, Nintendo
+              Switch, and other competitive-ready hardware. We deploy only what
+              performs&mdash;based on audience type, game format, and space
+              requirements. Nothing is random. Everything is tested.
+            </p>
+          </div>
+          <div className="mx-auto max-w-[1100px]">
+            {services.map((service, i) => (
+              <ServiceCard key={service.title} service={service} index={i} />
+            ))}
+          </div>
+        </section>
+
+        {/* Chosen by Leaders — Testimonials */}
+        <section className="border-b border-zinc-800 px-6 py-24 md:px-10 md:py-32">
+          <div className="mb-16 flex justify-center">
+            <HeadingTitle title="Chosen by Leaders." />
+          </div>
+          <Testimonials />
+        </section>
+      </div>
+
+      <CTASection />
+    </>
   );
 }
