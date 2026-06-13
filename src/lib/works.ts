@@ -24,7 +24,7 @@ export const works: Work[] = [
     title: "Toyota Gazoo Racing",
     category: "PlayPod",
     productType: "PlayPod",
-    year: "2025",
+    year: "2026",
     client: "Toyota",
     content: `<p><strong>Accelerating Fan Experience Through Sim Racing</strong></p><p>Super GT Sepang 2026 roared to life with more than just engines—this year, spectators stepped into the driver’s seat themselves, thanks to KITAMEN’s custom racing simulator experience hosted at the Toyota Gazoo Racing booth.</p><p>Built on Assetto Corsa and featuring exclusive access to the GR Yaris and GR Supra, the installation transformed a section of the circuit into a high-performance virtual grid. From authentic force feedback rigs to crowd-ready screens, every element was designed to replicate the rhythm and rush of GT-class racing.</p><p>Across three days, thousands of visitors took their turn on the track—some chasing lap times, others simply soaking in the thrill. The experience struck a chord with fans of all ages, offering a fresh way to engage with the culture of motorsport beyond the grandstands.</p>`,
     mainImage:
@@ -63,7 +63,7 @@ export const works: Work[] = [
     title: "Gegaria Fest",
     category: "Playpod & PlaySuite",
     productType: "Playpod & PlaySuite",
-    year: "2024",
+    year: "2018",
     client: "Media Prima",
     content: `<p>Gegaria Fest burst onto the Malaysian scene as a <strong>free, multi-city entertainment extravaganza</strong>, mixing food, fitness, culture, and proudly—<strong>gaming</strong>. With its signature container-themed setup, the festival traveled through Ipoh, Johor Bahru, Kuantan, Seremban, and Kuala Lumpur between March and April 2018.</p><p>At the heart of Gegaria’s gaming experience was the <strong>MyGameOn eSports Zone</strong>, featuring free-to-try VR, console, and PC titles. Esports tournaments included:</p><ul><li><p><strong>FIFA Online 3</strong> – RM 10,000 prize pool</p></li><li><p><strong>Tekken 7</strong> – RM 3,000</p></li><li><p><strong>Mario Kart 8 Deluxe</strong> mini-tournament – RM 1,000 </p></li><li><p>VR &amp; Guitar Hero for Free2Play Zone</p></li></ul><p>Fans clashed in arenas packed with energy, and matches were broadcast live, reinforcing the esports community’s presence in mainstream events.</p>`,
     mainImage:
@@ -82,7 +82,7 @@ export const works: Work[] = [
     title: "Malaysia Cyber Games",
     category: "PlaySuite",
     productType: "PlaySuite",
-    year: "2025",
+    year: "2018",
     client: "Kementerian Komunikasi dan Multimedia, Malaysia",
     content: `<iframe src="https://www.youtube.com/embed/CUx_lFxAzLU?iv_load_policy=3&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" frameborder="0" allow="presentation; fullscreen; accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><p>The iconic Putra World Trade Centre transformed into a digital battlefield as <strong>Malaysia Cyber Games 2018</strong> united thousands of players and fans under one roof—proving that competitive gaming had officially gone national.</p><p>At the center of this celebration stood one of the most anticipated brackets: the <strong>FIFA Tournament</strong>. Our team was entrusted to <strong>design, manage, and operate</strong> the FIFA segment of MCG. With precision scheduling, tournament logic, referee management, and technical infrastructure, we created a seamless and competitive experience worthy of the stage it was on.<br><br>The Legacy We Left</p><ul><li><p><strong>10,000+ attendees</strong> at PWTC</p></li><li><p><strong>1,000+ registered pro competitors</strong> across all games</p></li><li><p><strong>Live broadcasts and news coverage</strong> across Malay Mail, MyGameOn, and The Malaysian Reserve</p></li><li><p><strong>Official recognition</strong> from former Prime Minister Najib Razak, highlighting esports as a national agenda</p></li></ul>`,
     mainImage:
@@ -102,7 +102,7 @@ export const works: Work[] = [
     title: "Kejohanan E-Sukan Kampus",
     category: "PlayLab",
     productType: "PlayLab",
-    year: "2025",
+    year: "2019",
     client: "Media Prima",
     content: `<iframe src="https://www.youtube.com/embed/qIXwWrI9lFo?iv_load_policy=3&amp;rel=0&amp;modestbranding=1&amp;playsinline=1" frameborder="0" allow="presentation; fullscreen; accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe><p>The <strong>Kejohanan E‑sukan Kampus (KEK)</strong> is Malaysia’s largest campus-level esports tournament, initiated in 2019 in collaboration between Media Prima’s MyGameOn, Celcom Axiata’s youth brand XPAX (later Yoodo), and esports organizer Kitamen. Aimed at discovering and empowering student talent across all higher learning institutions, KEK combines competition, education, and entertainment into a nationwide campus circuit.</p><p><strong>Impact &amp; Legacy</strong></p><ul><li><p><strong>Grassroots Engagement</strong>: Reached over 266 campuses and more than 921 teams across semesters, with 142k attendees and 5 million livestream views.</p></li><li><p><strong>Talent Development</strong>: Provided students with competitive exposure, scholarship opportunities, and industry networking.</p></li><li><p><strong>Community Growth</strong>: Contributed to Malaysia’s broader push for healthy gaming and campus esports culture.</p></li></ul>`,
     mainImage:
