@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "motion/react";
 
 const leftImages = [
   "https://framerusercontent.com/images/Gs51g8osNOjNaUNxkbEKjljvFA.jpg",
@@ -16,30 +15,68 @@ const rightImages = [
   "https://framerusercontent.com/images/ZMV2sMmF0FMoZArg7GegLWpHI0I.jpg",
 ];
 
-export function Hero() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+const clamp = (v: number, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
+// map x from [a,b] to [0,1]
+const range = (x: number, a: number, b: number) => clamp((x - a) / (b - a));
 
-  // Panels slide apart over the first ~60% of the scroll track
-  const leftX = useTransform(scrollYProgress, [0, 0.6], ["0%", "-105%"]);
-  const rightX = useTransform(scrollYProgress, [0, 0.6], ["0%", "105%"]);
-  // Brand content scales/fades in behind the parting panels
-  const contentScale = useTransform(scrollYProgress, [0, 0.6], [0.85, 1]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.4, 0.6], [0, 0.4, 1]);
-  const indicatorOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+export function Hero() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const leftRef = useRef<HTMLDivElement>(null);
+  const rightRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const indicatorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const update = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+      const vh = window.innerHeight;
+      const scrollable = section.offsetHeight - vh; // pinned scroll distance
+      const scrolled = -section.getBoundingClientRect().top;
+      const progress = clamp(scrolled / scrollable); // 0 → 1 across the hero
+
+      // Panels part across most of the (now shorter) scroll track, so the
+      // hero releases soon after KITAMEN is fully revealed — no long dead zone.
+      const part = range(progress, 0, 0.8); // 0 → 1
+      if (leftRef.current)
+        leftRef.current.style.transform = `translateX(${-105 * part}%)`;
+      if (rightRef.current)
+        rightRef.current.style.transform = `translateX(${105 * part}%)`;
+
+      // KITAMEN fades + scales in as the curtain opens
+      const opacity = range(progress, 0.03, 0.4);
+      const scale = 0.85 + range(progress, 0.03, 0.55) * 0.15;
+      if (contentRef.current) {
+        contentRef.current.style.opacity = String(opacity);
+        contentRef.current.style.transform = `scale(${scale})`;
+      }
+
+      // Scroll hint fades out quickly
+      if (indicatorRef.current)
+        indicatorRef.current.style.opacity = String(1 - range(progress, 0, 0.2));
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
 
   return (
-    <section ref={ref} className="relative h-[250vh] bg-zinc-200">
+    <section ref={sectionRef} className="relative h-[150vh] bg-zinc-200">
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
-        {/* Brand content revealed behind the panels */}
-        <motion.div
-          style={{ scale: contentScale, opacity: contentOpacity }}
-          className="absolute inset-0 z-10 flex flex-col items-center justify-center px-6 text-center"
+        {/* Brand content — fades in on top as the curtain opens */}
+        <div
+          ref={contentRef}
+          style={{ opacity: 0, transform: "scale(0.85)" }}
+          className="pointer-events-none absolute inset-0 z-30 flex flex-col items-center justify-center px-6 text-center"
         >
-          <h1 className="text-brand leading-none text-black">KITAMEN</h1>
+          <h1 className="text-brand leading-none text-black [text-shadow:0_2px_30px_rgba(228,228,231,0.6)]">
+            KITAMEN
+          </h1>
           <div className="mt-8 grid max-w-[1100px] grid-cols-1 gap-6 md:grid-cols-2">
             <p className="text-h5 text-black md:text-right">
               Boutique esports agency based in Malaysia
@@ -48,45 +85,41 @@ export function Hero() {
               Crafted for impact. Delivered with precision.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Left panel */}
-        <motion.div
-          style={{ x: leftX }}
-          className="absolute left-0 top-0 z-20 grid h-screen w-1/2 grid-rows-3"
+        <div
+          ref={leftRef}
+          className="absolute left-0 top-0 z-20 grid h-screen w-1/2 grid-rows-3 will-change-transform"
         >
           {leftImages.map((src, i) => (
             <div key={i} className="relative h-full w-full overflow-hidden">
               <Image src={src} alt="" fill sizes="50vw" className="object-cover" priority={i === 0} />
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Right panel */}
-        <motion.div
-          style={{ x: rightX }}
-          className="absolute right-0 top-0 z-20 grid h-screen w-1/2 grid-rows-3"
+        <div
+          ref={rightRef}
+          className="absolute right-0 top-0 z-20 grid h-screen w-1/2 grid-rows-3 will-change-transform"
         >
           {rightImages.map((src, i) => (
             <div key={i} className="relative h-full w-full overflow-hidden">
               <Image src={src} alt="" fill sizes="50vw" className="object-cover" priority={i === 0} />
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Scroll indicator */}
-        <motion.div
-          style={{ opacity: indicatorOpacity }}
+        <div
+          ref={indicatorRef}
           className="absolute bottom-12 left-1/2 z-30 -translate-x-1/2"
         >
           <div className="flex h-12 w-8 items-start justify-center rounded-full bg-zinc-200/80 p-2">
-            <motion.span
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 1.4 }}
-              className="block h-2 w-2 rounded-full bg-black"
-            />
+            <span className="block h-2 w-2 animate-bounce rounded-full bg-black" />
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
