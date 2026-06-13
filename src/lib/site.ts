@@ -14,7 +14,7 @@ export const site = {
   ] as { label: string; href: string; external?: boolean }[],
   social: [
     { label: "Instagram", href: "https://instagram.com/kitamenofficial" },
-    { label: "Twitter", href: "https://x.com/kitamenofficial" },
+    { label: "Facebook", href: "https://facebook.com/kitamen" },
   ],
 };
 
