@@ -1,0 +1,199 @@
+# KITAMEN.my — Broken Link Audit
+
+Scanned **296 items** · 587 unique links (362 internal, 225 external)
+
+- **Internal links pointing to unknown/unpublished URLs:** 25
+- **External links returning errors (4xx/5xx/unreachable):** 52
+
+## Broken / suspect external links
+
+- `401` https://www.reuters.com/technology/hsbc-esports-investment-2024-07-12
+    - on: https://kitamen.my/2025/07/31/pmx-and-the-digital-economy-why-esports-must-be-on-the-agenda/
+- `401` https://reuters.com
+    - on: https://kitamen.my/2025/07/31/digital-inclusion-how-esports-can-help-malaysian-banks-reach-the-unbanked-2025/
+    - on: https://kitamen.my/2025/07/31/esports-as-csr-how-malaysian-banks-can-empower-youth-in-2025/
+    - on: https://kitamen.my/2025/07/31/esports-banking-partnerships-beyond-sponsorship-in-malaysia-2025/
+- `401` https://www.reuters.com/technology/indonesia-emtek-invests-esports
+    - on: https://kitamen.my/2025/07/31/malaysias-missed-sponsorship-opportunities-in-esports-media-2025/
+- `401` https://www.reuters.com
+    - on: https://kitamen.my/2025/07/31/level-up-banking-how-esports-loyalty-programs-could-transform-malaysias-financial-industry/
+- `403` https://www.insidethegames.biz/articles/1128643/university-e-league-malaysia-season-3
+    - on: https://kitamen.my/2025/08/01/mvel-2025-kick-off-empowering-campus-esports-talent-across-malaysia/
+    - on: https://kitamen.my/2025/08/01/mvel-vs-uel-choosing-the-best-varsity-esports-platform-for-your-university/
+    - on: https://kitamen.my/2025/08/01/why-malaysian-universities-are-embracing-mvel-how-kitamen-supports-campus-teams/
+- `403` https://www.insidethegames.biz/articles/1144943/malaysia-varsity-esports-rise
+    - on: https://kitamen.my/2025/07/30/the-rise-of-varsity-esports-leagues-in-malaysia-2025-edition/
+- `403` https://www.insidethegames.biz/articles/1128643/university-e-league-malaysia-season-3?utm_source=chatgpt.com
+    - on: https://kitamen.my/2025/07/29/why-malaysian-schools-universities-are-embracing-esports-2025/
+- `404` https://www.mpl.gg/my
+    - on: https://kitamen.my/2025/08/31/broadcast-producer-in-malaysian-esports-2025-the-orchestrators-behind-the-screen/
+    - on: https://kitamen.my/2025/08/31/esports-event-manager-in-malaysia-2025-the-backbone-of-every-tournament/
+    - on: https://kitamen.my/2025/08/31/esports-referee-admin-in-malaysia-2025-the-silent-guardians-of-fair-play/
+- `404` https://liquipedia.net/mobilelegends/Mobile_Legends_Professional_League/Malaysia/Season_15
+    - on: https://kitamen.my/2025/08/11/esports-analyst-the-data-driven-minds-of-malaysian-esports-2025/
+    - on: https://kitamen.my/2025/08/16/esports-coach-in-malaysia-2025-the-strategists-behind-every-victory/
+- `404` https://esportsinsider.com/2025/01/sea-esports-market-2025-report
+    - on: https://kitamen.my/2025/08/11/esports-analyst-the-data-driven-minds-of-malaysian-esports-2025/
+    - on: https://kitamen.my/2025/08/11/pro-player-malaysias-path-to-esports-stardom-in-2025/
+    - on: https://kitamen.my/2025/08/16/esports-coach-in-malaysia-2025-the-strategists-behind-every-victory/
+- `404` https://liquipedia.net/mobilelegends/Mobile_Legends_Professional_League/Malaysia/Season_13
+    - on: https://kitamen.my/2025/08/11/esports-analyst-the-data-driven-minds-of-malaysian-esports-2025/
+- `404` https://mastastudios.com/news/kol-activation-strategy-2025
+    - on: https://kitamen.my/2025/08/06/the-future-of-media-production-in-southeast-asia-why-masta-studios-is-leading-the-charge/
+- `404` https://mastastudios.com/news/asad-motawh-inside-masta
+    - on: https://kitamen.my/2025/08/06/the-future-of-media-production-in-southeast-asia-why-masta-studios-is-leading-the-charge/
+- `404` https://wa.me/YOUR-WHATSAPP-NUMBER
+    - on: https://kitamen.my/2025/08/06/the-future-of-media-production-in-southeast-asia-why-masta-studios-is-leading-the-charge/
+- `404` https://mastastudios.com/booking
+    - on: https://kitamen.my/2025/08/06/the-future-of-media-production-in-southeast-asia-why-masta-studios-is-leading-the-charge/
+- `404` https://www.rentsmartasia.com/shop/playstation-5-ps5-for-rent/
+    - on: https://kitamen.my/2025/08/05/ps5-rental-packages-in-malaysia-2025-which-option-fits-your-event/
+    - on: https://kitamen.my/2025/08/05/ps5-rental-services-in-malaysia-2025-comparing-providers-why-kitamen-sets-the-standard/
+    - on: https://kitamen.my/2025/08/05/why-cheap-ps5-rentals-may-cost-you-more-in-malaysia-2025-guide/
+- `404` https://www.esportsinsider.com/2021/09/sem9-berjaya-dragons
+    - on: https://kitamen.my/2025/08/01/sem9-malaysia-esports-2025/
+- `404` https://www.oneesports.gg/valorant/todak-malaysia-valorant-2025/
+    - on: https://kitamen.my/2025/08/01/todak-valorant-mlbb-malaysia-2025/
+- `404` https://www.oneesports.gg/mlbb/homebois-msc-2025/
+    - on: https://kitamen.my/2025/08/01/homebois-mlbb-malaysia-2025/
+- `404` https://esportsinsider.com/2024/06/mlbb-msc-2024-selangor-red-giants
+    - on: https://kitamen.my/2025/08/01/selangor-red-giants-og-mlbb-malaysia-2025/
+- `404` https://www.nst.com.my/sports/2023/11/962309/malaysia-joins-forces-asean-esports-bodies
+    - on: https://kitamen.my/2025/07/31/mesfs-global-partnerships-and-malaysias-role-in-asean-esports-2025/
+- `404` https://esportsinsider.com/2024/09/vietnam-esports-government-policy
+    - on: https://kitamen.my/2025/07/31/what-if-pmx-positions-malaysia-as-aseans-esports-hub-by-2030/
+- `404` https://www.apu.edu.my/media/news/3039
+    - on: https://kitamen.my/2025/07/30/esports-pendidikan-malaysia-2025-membina-generasi-digital/
+    - on: https://kitamen.my/2025/07/31/malaysias-esports-talent-pipeline-under-pmx-education-to-pro-level/
+    - on: https://kitamen.my/2025/07/31/pmxs-youth-agenda-can-esports-empower-malaysias-next-generation/
+- `404` https://esportsinsider.com/2024/11/esports-global-growth-2025
+    - on: https://kitamen.my/2025/07/31/pmx-and-the-digital-economy-why-esports-must-be-on-the-agenda/
+- `404` https://www.esportsinsider.com/2023/12/tier-one-expansion
+    - on: https://kitamen.my/2025/07/31/malaysias-missed-sponsorship-opportunities-in-esports-media-2025/
+    - on: https://kitamen.my/2025/07/31/why-malaysia-needs-its-own-tier-one-or-one-esports-in-2025/
+- `404` https://mdec.my/digital-economy-report
+    - on: https://kitamen.my/2025/07/31/malaysias-missed-sponsorship-opportunities-in-esports-media-2025/
+- `404` https://www.cnbc.com/2023/08/esports-banking-strategy.html
+    - on: https://kitamen.my/2025/07/31/why-malaysia-needs-its-own-tier-one-or-one-esports-in-2025/
+- `404` https://esportsinsider.com/2024/07/vietnam-esports-growth
+    - on: https://kitamen.my/2025/07/31/vietnams-esports-surge-education-and-stem-integration-leading-the-way/
+- `404` https://esportsinsider.com/2024/05/indonesia-esports-growth
+    - on: https://kitamen.my/2025/07/31/indonesias-esports-boom-corporate-partnerships-driving-growth/
+- `404` https://esportsinsider.com/2024/11/malaysia-esports-venues-2025
+    - on: https://kitamen.my/2025/07/30/where-to-play-esports-offline-in-malaysia-2025/
+- `404` https://iesf.org/country-member/malaysia/
+    - on: https://kitamen.my/2025/07/30/malaysia-esports-federation-mesf-national-esports-body-2025/
+- `404` https://esportsinsider.com/2024/07/mlbb-msc-2024-champions
+    - on: https://kitamen.my/2025/07/30/top-10-malaysian-esports-teams-to-watch-in-2025/
+- `404` https://www.themalaysianreserve.com/2022/11/15/uitm-triumphs-in-varsity-esports/
+    - on: https://kitamen.my/2025/07/30/malaysia-s-varsity-esports-leagues-building-future-champions/
+- `404` https://www.apu.edu.my/media/news/3039?utm_source=chatgpt.com
+    - on: https://kitamen.my/2025/07/29/why-malaysian-schools-universities-are-embracing-esports-2025/
+- `404` https://www.toornament.com/tournaments/990536424089780224/stages/#nogo
+    - on: https://kitamen.my/2017/12/13/199/
+- `406` https://vnexpress.net
+    - on: https://kitamen.my/2025/07/31/vietnams-esports-funding-model-lessons-for-malaysia/
+    - on: https://kitamen.my/2025/07/31/vietnams-grassroots-esports-growth-lessons-for-malaysia/
+- `500` https://ejbm.sites.apiit.edu.my/files/2023/04/Paper-6-Growth-of-E-Sports-Among-the-Youngsters-in-Malaysia.pdf
+    - on: https://kitamen.my/2025/07/31/the-real-state-of-malaysias-esports-industry-in-2025/
+- `521` https://revivaltv.id
+    - on: https://kitamen.my/2025/07/31/malaysia-vs-asean-where-our-esports-media-stands-in-2025/
+- `ERR:URLError` https://baskl.com.my/marvel-at-the-new-tgv-pavilion-bukit-jalil/
+    - on: https://kitamen.my/2025/08/16/playpod-how-permanent-gaming-hubs-are-redefining-cinemas-in-malaysia/
+    - on: https://kitamen.my/2025/08/16/tgv-reimagining-the-cinema-as-malaysias-cultural-epicenter/
+- `ERR:URLError` https://www.gamesmyesports.gg/
+    - on: https://kitamen.my/2025/08/05/ps5-rental-services-in-malaysia-2025-comparing-providers-why-kitamen-sets-the-standard/
+- `ERR:URLError` https://mpl.my/
+    - on: https://kitamen.my/2025/08/01/aero-esports-mlbb-malaysia-2025/
+    - on: https://kitamen.my/2025/08/01/dx-soul-mlbb-malaysia-2025/
+    - on: https://kitamen.my/2025/08/01/monster-vicious-mlbb-malaysia-2025/
+- `ERR:URLError` https://www.asiaesports.org/
+    - on: https://kitamen.my/2025/08/01/mega-vs-mesf-malaysias-dual-esports-governance-debate-in-2025/
+- `ERR:URLError` https://www.sports.gov.my/
+    - on: https://kitamen.my/2025/07/31/mesfs-role-in-malaysias-esports-ecosystem-2025/
+- `ERR:URLError` https://malaysiavarsityesportsleague.com/
+    - on: https://kitamen.my/2025/07/30/benefits-of-esports-for-students-malaysia-2025/
+    - on: https://kitamen.my/2025/07/30/malaysia-esports-madani-budget-2025/
+    - on: https://kitamen.my/2025/07/31/esports-as-a-tool-for-national-unity-under-malaysia-madani/
+- `ERR:URLError` https://www.dosm.gov.my
+    - on: https://kitamen.my/2025/07/31/pmxs-youth-agenda-can-esports-empower-malaysias-next-generation/
+- `ERR:URLError` https://www.tv3.com.my
+    - on: https://kitamen.my/2025/07/31/esports-in-malaysian-mainstream-media-from-niche-coverage-to-prime-time-2025/
+- `ERR:URLError` https://myesports.kbs.gov.my/
+    - on: https://kitamen.my/2025/07/30/shoutcasting-as-a-career-in-malaysia-s-esports-industry/
+- `ERR:URLError` https://mysubsidies.gov.my
+    - on: https://kitamen.my/2025/07/30/government-grants-funding-for-esports-startups-in-2025/
+- `ERR:URLError` https://malaysiavarsityesportsleague.com/?utm_source=chatgpt.com
+    - on: https://kitamen.my/2025/07/29/why-malaysian-schools-universities-are-embracing-esports-2025/
+- `ERR:URLError` http://kitamen.com.my/wp-content/uploads/2017/12/11.jpg
+    - on: https://kitamen.my/2017/12/13/199/
+- `ERR:URLError` http://dojo.kitamen.my/products/rentalsolutions/
+    - on: https://kitamen.my/404-custom/
+- `ERR:URLError` http://dojo.kitamen.my
+    - on: https://kitamen.my/404-custom/
+
+## Internal links to unknown URLs (possible broken/renamed/unpublished)
+
+_Note: archive paths (/category, /tag, /author, /page) excluded. Some may be valid custom pages — verify._
+
+- /blog/malaysia-esports-guide/
+    - on: https://kitamen.my/2025/10/22/malaysia-esports-calendar-2025-full-tournament-schedule/
+- /blog/acara-esukan-malaysia/
+    - on: https://kitamen.my/2025/10/22/malaysia-esports-calendar-2025-full-tournament-schedule/
+- https://kitamen.my/2025/10/22/soalan-sains-tahun-5-topik-tenaga-dan-alam-sekitar/
+    - on: https://kitamen.my/2025/10/22/bank-soalan-ai-malaysia-2025-latihan-peperiksaan-digital-untuk-semua-murid/
+    - on: https://kitamen.my/2025/10/22/contoh-soalan-matematik-tahun-6-kssr-semakan-2025/
+- https://kitamen.my/2025/10/22/soalan-bahasa-melayu-tahun-4-pemahaman-dan-karangan/
+    - on: https://kitamen.my/2025/10/22/bank-soalan-ai-malaysia-2025-latihan-peperiksaan-digital-untuk-semua-murid/
+    - on: https://kitamen.my/2025/10/22/contoh-soalan-matematik-tahun-6-kssr-semakan-2025/
+- https://kitamen.my/2025/10/22/contoh-soalan-matematik-tahun-6-2025/
+    - on: https://kitamen.my/2025/10/22/bank-soalan-ai-malaysia-2025-latihan-peperiksaan-digital-untuk-semua-murid/
+- https://kitamen.my/2025/08/11/best-shoutcaster-equipment-2025-malaysia/
+    - on: https://kitamen.my/2025/08/11/alternatif-kepada-mesf-pilihan-laluan-untuk-pemain-industri-esukan-malaysia-2025/
+    - on: https://kitamen.my/2025/08/11/debat-tadbir-urus-esukan-malaysia-mega-vs-mesf-2025/
+- https://kitamen.my/2025/10/15/indeks-esukan-malaysia-2025-mengukur-pertumbuhan-penonton-ekonomi-digital/
+    - on: https://kitamen.my/2025/10/18/revolusi-ai-dalam-esukan-malaysia-2025-dari-operasi-ke-inovasi/
+- https://kitamen.my/2025/08/11/panduan-menyertai-kejohanan-esukan-malaysia-2025/
+    - on: https://kitamen.my/2025/08/11/alternatif-kepada-mesf-pilihan-laluan-untuk-pemain-industri-esukan-malaysia-2025/
+    - on: https://kitamen.my/2025/08/11/debat-tadbir-urus-esukan-malaysia-mega-vs-mesf-2025/
+- https://kitamen.my/2025/08/11/esports-coach-in-malaysia-2025-the-strategists-behind-every-victory/
+    - on: https://kitamen.my/2025/08/31/esports-team-manager-in-malaysia-2025-the-people-who-keep-the-players-performing/
+- https://kitamen.my/2025/08/11/demon-slayer-x-playpod-tgv-event-breakdown-and-impact/
+    - on: https://kitamen.my/2025/08/16/behind-the-scenes-how-kitamen-powers-the-cultural-infrastructure-inside-tgv-cinemas/
+    - on: https://kitamen.my/2025/08/16/how-ip-owners-can-launch-across-film-game-and-merch-all-inside-a-cinema/
+- https://kitamen.my/2025/08/31/esports-salaries-in-malaysia-2025-how-much-do-players-casters-and-coaches-earn/
+    - on: https://kitamen.my/2025/08/11/esports-careers-in-malaysia-the-complete-2025-guide/
+    - on: https://kitamen.my/manifesto/
+- https://kitamen.my/2025/08/11/how-to-become-a-shoutcaster-in-malaysia/
+    - on: https://kitamen.my/2025/08/11/how-to-build-your-personal-brand-as-a-shoutcaster-in-malaysia/
+- https://kitamen.my/2025/07/31/the-real-state-of-malaysias-esports-industry-in-2025-beyond-the-blueprint/
+    - on: https://kitamen.my/2025/08/01/xipto-esports-malaysia-2025/
+- https://kitamen.my/2025/08/01/malaysia-esports-2030-what-if-pmxs-vision-becomes-reality/
+    - on: https://kitamen.my/2025/08/01/motiv-esports-malaysia-2025/
+- https://www.kitamen.my/2025/07/31/the-real-state-of-malaysias-esports-industry-in-2025-beyond-the-blueprint/
+    - on: https://kitamen.my/2025/08/01/dx-soul-mlbb-malaysia-2025/
+    - on: https://kitamen.my/2025/08/01/ocean-black-mlbb-malaysia-2025/
+- https://www.kitamen.my/2025/07/30/the-real-state-of-malaysias-esports-industry-in-2025-beyond-the-blueprint/
+    - on: https://kitamen.my/2025/08/01/homebois-mlbb-malaysia-2025/
+    - on: https://kitamen.my/2025/08/01/selangor-red-giants-og-mlbb-malaysia-2025/
+- https://www.kitamen.my/2025/07/30/why-malaysian-schools-universities-are-embracing-esports-2025/
+    - on: https://kitamen.my/2025/07/30/playpod-ps5-rental-malaysia-2025/
+- https://www.kitamen.my/2025/07/29/top-faqs-for-brands-sponsors-in-malaysian-esports/
+    - on: https://kitamen.my/2025/07/29/kitamen-esports-faq/
+    - on: https://kitamen.my/2025/07/29/top-faqs-for-esports-event-organizers-in-malaysia-2/
+- https://www.kitamen.my/entertainment/
+    - on: https://kitamen.my/services/carsimulator-rental/
+    - on: https://kitamen.my/services/ps4-rental/
+- https://www.kitamen.my/services/ps5-rental/
+    - on: https://kitamen.my/services/
+    - on: https://kitamen.my/services/ps4-rental/
+- https://www.kitamen.my/playpod-ps5-rental-malaysia-2025/
+    - on: https://kitamen.my/services/playpod-ps5-rental-malaysia-2025/
+- https://www.kitamen.my/ps4-rental/
+    - on: https://kitamen.my/services/
+- https://kitamen.my/2025/10/22/
+    - on: https://kitamen.my/blog/
+- https://kitamen.my/2025/10/21/
+    - on: https://kitamen.my/blog/
+- https://kitamen.my/docs/knowledgebase/kitamen-master-ci/
+    - on: https://kitamen.my/contact/

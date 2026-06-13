@@ -21,12 +21,22 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {site.nav.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-body-sm text-zinc-300 hover:text-white"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      rel="noreferrer"
+                      className="text-body-sm text-zinc-300 hover:text-white"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="text-body-sm text-zinc-300 hover:text-white"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
