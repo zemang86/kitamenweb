@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HeadingTitle } from "@/components/HeadingTitle";
 import { ProjectCard } from "@/components/ProjectCard";
 import { CTASection } from "@/components/CTASection";
+import { FadeIn } from "@/components/home2/FadeIn";
 import { works } from "@/lib/works";
 
 const worksDescription =
@@ -24,14 +25,18 @@ export default function ProjectsPage() {
     <>
       <section className="px-6 pb-24 pt-40 md:px-10 md:pt-48">
         <div className="mx-auto max-w-[1600px]">
-          <HeadingTitle title="Featured Works" as="h1" />
-          <p className="text-body-lg mt-6 max-w-[600px] text-zinc-400">
-            Built by leaders, trusted by giants.
-          </p>
+          <FadeIn>
+            <HeadingTitle title="Featured Works" as="h1" />
+            <p className="text-body-lg mt-6 max-w-[600px] text-zinc-400">
+              Built by leaders, trusted by giants.
+            </p>
+          </FadeIn>
 
           <div className="mt-16 grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
-            {works.map((w) => (
-              <ProjectCard key={w.slug} work={w} />
+            {works.map((w, i) => (
+              <FadeIn key={w.slug} delay={(i % 2) * 0.1}>
+                <ProjectCard work={w} />
+              </FadeIn>
             ))}
           </div>
         </div>

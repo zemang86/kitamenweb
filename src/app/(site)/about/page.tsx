@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { HeadingTitle } from "@/components/HeadingTitle";
 import { CTASection } from "@/components/CTASection";
+import { FadeIn } from "@/components/home2/FadeIn";
 import { team } from "@/lib/site";
 
 const aboutDescription =
@@ -33,8 +34,13 @@ export default function AboutPage() {
     <>
       <section className="px-6 pb-24 pt-40 md:px-10 md:pt-48">
         <div className="mx-auto max-w-[1600px]">
-          <HeadingTitle title="Who We Are" as="h1" color="rgb(255,255,255)" />
-          <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">
+          <FadeIn>
+            <HeadingTitle title="Who We Are" as="h1" color="rgb(255,255,255)" />
+          </FadeIn>
+          <FadeIn
+            delay={0.1}
+            className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2"
+          >
             <p className="text-body-lg text-zinc-300">
               Since 2015, we&rsquo;ve produced 220+ national events and
               distributed RM2 million in prize pools, partnering with Media
@@ -49,21 +55,22 @@ export default function AboutPage() {
               We set standards, shape culture, and execute with precision. Led
               by Hazman Hassan.
             </p>
-          </div>
+          </FadeIn>
 
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {stats.map((s) => (
-              <div
+            {stats.map((s, i) => (
+              <FadeIn
                 key={s.label}
+                delay={i * 0.1}
                 className="rounded-2xl border border-zinc-800 bg-zinc-950 p-8"
               >
                 <p className="text-h2 text-white">{s.value}</p>
                 <p className="text-body-sm mt-2 text-zinc-500">{s.label}</p>
-              </div>
+              </FadeIn>
             ))}
           </div>
 
-          <div className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-3xl bg-zinc-900">
+          <FadeIn className="relative mt-10 aspect-[16/9] w-full overflow-hidden rounded-3xl bg-zinc-900">
             <Image
               src={teamImage}
               alt="The KITAMEN team"
@@ -71,29 +78,32 @@ export default function AboutPage() {
               sizes="100vw"
               className="object-cover"
             />
-          </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Meet the Team */}
       <section className="border-t border-zinc-800 px-6 py-24 md:px-10 md:py-32">
         <div className="mx-auto max-w-[1600px]">
-          <HeadingTitle title="Meet the Team" />
-          <p className="text-body mt-6 max-w-[600px] text-zinc-400">
-            Command &amp; dominate. A tight crew of operators, broadcasters, and
-            builders behind every KITAMEN production.
-          </p>
+          <FadeIn>
+            <HeadingTitle title="Meet the Team" />
+            <p className="text-body mt-6 max-w-[600px] text-zinc-400">
+              Command &amp; dominate. A tight crew of operators, broadcasters,
+              and builders behind every KITAMEN production.
+            </p>
+          </FadeIn>
           <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
             {team
               .filter((member) => ["Hazman", "Riaz"].includes(member.name))
-              .map((member) => (
-                <div
+              .map((member, i) => (
+                <FadeIn
                   key={member.name}
+                  delay={i * 0.1}
                   className="border-t border-zinc-800 pt-6"
                 >
                   <p className="text-h3 text-white">{member.name}</p>
                   <p className="text-h6sm mt-2 text-zinc-500">{member.role}</p>
-                </div>
+                </FadeIn>
               ))}
           </div>
         </div>

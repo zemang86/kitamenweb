@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CTASection } from "@/components/CTASection";
+import { FadeIn } from "@/components/home2/FadeIn";
 import { works, getWork } from "@/lib/works";
 import { site } from "@/lib/site";
 
@@ -109,7 +110,7 @@ export default async function ProjectDetailPage({
         <div className="mx-auto max-w-[1100px]">
           <Link
             href="/projects"
-            className="text-h6sm text-zinc-500 hover:text-white"
+            className="text-h6sm text-zinc-500 transition-colors hover:text-accent"
           >
             ← All Works
           </Link>
@@ -145,8 +146,9 @@ export default async function ProjectDetailPage({
           {/* Gallery */}
           <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2">
             {gallery.map((src, i) => (
-              <div
+              <FadeIn
                 key={i}
+                delay={(i % 2) * 0.1}
                 className={`relative overflow-hidden rounded-2xl bg-zinc-900 ${
                   i % 3 === 0 ? "md:col-span-2 aspect-[16/9]" : "aspect-[4/3]"
                 }`}
@@ -158,7 +160,7 @@ export default async function ProjectDetailPage({
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
                 />
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
@@ -166,15 +168,15 @@ export default async function ProjectDetailPage({
 
       {/* Next project */}
       <section className="border-t border-zinc-800 px-6 py-16 md:px-10">
-        <div className="mx-auto flex max-w-[1100px] items-center justify-between">
+        <FadeIn className="mx-auto flex max-w-[1100px] items-center justify-between">
           <span className="text-h6sm text-zinc-500">Next Project</span>
           <Link
             href={`/projects/${next.slug}`}
-            className="text-h3 text-white transition-colors hover:text-zinc-400"
+            className="text-h3 text-white transition-colors hover:text-accent"
           >
             {next.title} →
           </Link>
-        </div>
+        </FadeIn>
       </section>
 
       <CTASection />

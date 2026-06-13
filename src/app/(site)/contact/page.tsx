@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { HeadingTitle } from "@/components/HeadingTitle";
 import { Button } from "@/components/Button";
+import { FadeIn } from "@/components/home2/FadeIn";
 import { site } from "@/lib/site";
 
 const contactDescription =
@@ -22,14 +23,16 @@ export default function ContactPage() {
   return (
     <section className="min-h-[80vh] px-6 pb-32 pt-40 md:px-10 md:pt-48">
       <div className="mx-auto max-w-[1600px]">
-        <HeadingTitle title="Talk To Us" as="h1" />
-        <p className="text-body-lg mt-6 max-w-[600px] text-zinc-400">
-          Have a brief, an event, or an idea worth building? We&rsquo;d love to
-          hear it.
-        </p>
+        <FadeIn>
+          <HeadingTitle title="Talk To Us" as="h1" />
+          <p className="text-body-lg mt-6 max-w-[600px] text-zinc-400">
+            Have a brief, an event, or an idea worth building? We&rsquo;d love to
+            hear it.
+          </p>
+        </FadeIn>
 
         <div className="mt-20 grid grid-cols-1 gap-16 md:grid-cols-2">
-          <div className="flex flex-col gap-12">
+          <FadeIn delay={0.1} className="flex flex-col gap-12">
             <div>
               <p className="text-h6sm text-zinc-500">Send an email</p>
               <a
@@ -54,22 +57,22 @@ export default function ContactPage() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-h6 text-zinc-300 hover:text-white"
+                    className="text-h6 text-zinc-300 transition-colors hover:text-accent"
                   >
                     {s.label}
                   </a>
                 ))}
               </div>
             </div>
-          </div>
+          </FadeIn>
 
-          <div className="flex items-end">
+          <FadeIn delay={0.2} className="flex items-end">
             <h2 className="text-h1 text-zinc-100">
               Engineer The
               <br />
               Next Reality
             </h2>
-          </div>
+          </FadeIn>
         </div>
       </div>
     </section>
