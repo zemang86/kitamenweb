@@ -52,8 +52,7 @@ export default function AboutPage() {
               play&mdash;not just what sells. After years fixing half-baked
               events run by middlemen, clients now return&mdash;not for price,
               but for outcomes. KITAMEN isn&rsquo;t your average esports vendor.
-              We set standards, shape culture, and execute with precision. Led
-              by Hazman Hassan.
+              We set standards, shape culture, and execute with precision.
             </p>
           </FadeIn>
 
@@ -94,7 +93,7 @@ export default function AboutPage() {
           </FadeIn>
           <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
             {team
-              .filter((member) => ["Hazman", "Riaz"].includes(member.name))
+              .filter((member) => ["Riaz"].includes(member.name))
               .map((member, i) => (
                 <FadeIn
                   key={member.name}
