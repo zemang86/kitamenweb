@@ -39,6 +39,8 @@ export type WikiMeta = {
   startDate?: string;
   endDate?: string;
   locationName?: string;
+  /** Person nationality — only set when verified; omitted entities assert none. */
+  nationality?: string;
   /** Authoritative URLs for entity disambiguation (official site, liquipedia…). */
   sameAs?: string[];
 };
@@ -232,7 +234,9 @@ export function entityJsonLd(
       break;
     case "players":
       base.jobTitle = "Esports Player";
-      base.nationality = { "@type": "Country", name: "Malaysia" };
+      if (meta.nationality) {
+        base.nationality = { "@type": "Country", name: meta.nationality };
+      }
       break;
     case "tournaments":
       base.sport = "Esports";
