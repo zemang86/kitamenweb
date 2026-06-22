@@ -29,6 +29,8 @@ export type WikiMeta = {
   facts?: WikiFact[];
   /** "See also" internal links — the entity graph that AEO rewards. */
   related?: WikiLink[];
+  /** Visible reference links that back the facts on the page (trust / E-E-A-T). */
+  sources?: WikiLink[];
   tags?: string[];
   /** Hide from indexes + sitemap until the entry is verified/ready. */
   draft?: boolean;

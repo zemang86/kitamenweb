@@ -112,6 +112,25 @@ export default async function WikiEntity({
                   </ul>
                 </>
               ) : null}
+
+              {meta.sources?.length ? (
+                <>
+                  <h2>Sources</h2>
+                  <ul>
+                    {meta.sources.map((s) => (
+                      <li key={s.href}>
+                        <a
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {s.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
             </div>
 
             {/* Infobox — appears first on mobile, right rail on desktop */}
