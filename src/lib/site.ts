@@ -9,6 +9,7 @@ export const site = {
   nav: [
     { label: "Works", href: "/projects" },
     { label: "About", href: "/about" },
+    { label: "Wiki", href: "/wiki" },
     { label: "Knowledgebase", href: "https://kitamen.my/blog", external: true },
     { label: "Contact", href: "/contact" },
   ] as { label: string; href: string; external?: boolean }[],
