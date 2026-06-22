@@ -47,6 +47,8 @@ export type WikiMeta = {
   nationality?: string;
   /** Authoritative URLs for entity disambiguation (official site, liquipedia…). */
   sameAs?: string[];
+  /** Override the @type for finer schema (e.g. orgs → "GovernmentOrganization"). */
+  schemaTypeOverride?: string;
 };
 
 export type WikiTypeKey =
@@ -54,7 +56,8 @@ export type WikiTypeKey =
   | "teams"
   | "tournaments"
   | "games"
-  | "glossary";
+  | "glossary"
+  | "orgs";
 
 export type WikiTypeConfig = {
   key: WikiTypeKey;
@@ -103,6 +106,13 @@ export const WIKI_TYPES: WikiTypeConfig[] = [
     plural: "Glossary",
     blurb: "Esports terminology, defined in Bahasa-Malaysia-aware English.",
     schemaType: "DefinedTerm",
+  },
+  {
+    key: "orgs",
+    label: "Organisation",
+    plural: "Organisations & Bodies",
+    blurb: "The ministries, federations and programmes behind Malaysian esports.",
+    schemaType: "Organization",
   },
 ];
 
@@ -252,6 +262,13 @@ export function entityJsonLd(
       break;
     case "glossary":
       base.inDefinedTermSet = `${site.url}/wiki/glossary`;
+      break;
+    case "orgs":
+      if (meta.schemaTypeOverride) base["@type"] = meta.schemaTypeOverride;
+      if (meta.foundingDate) base.foundingDate = meta.foundingDate;
+      if (meta.locationName) {
+        base.location = { "@type": "Place", name: meta.locationName };
+      }
       break;
   }
 

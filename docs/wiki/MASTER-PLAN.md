@@ -28,7 +28,7 @@
 
 - **Entity types** (`WIKI_TYPES`), schema.org `@type` each:
   - `games` → VideoGame · `teams` → SportsTeam · `players` → Person · `tournaments` → SportsEvent · `glossary` → DefinedTerm
-  - **Proposed 6th type: `orgs` → Organization / GovernmentOrganization** (for KBS, MEsA, NADI, DEK/MEAP programmes). Decision in §4 Batch 4 — recommended because the institutional cluster is the highest-leverage money branch and Organization schema is a poor fit for DefinedTerm.
+  - **`orgs` → Organization** (LIVE since Batch 4) — with optional `meta.schemaTypeOverride` for finer @type (GovernmentOrganization, SportsOrganization, GovernmentService). Holds ministries, federations, agencies and govt programmes (KBS, MESF, ESI, NADI, DEK, MEAP).
 - **Content:** MDX at `src/content/wiki/<type>/<slug>.mdx`, each with `export const meta = {...}` + body. Filesystem-scanned at build — no registry edit to add one.
 - **Routes (all SSG, `dynamicParams=false`):** `/wiki`, `/wiki/[type]`, `/wiki/[type]/[slug]`.
 - **Search:** build-time `searchIndex()` → `WikiSearch` client component on `/wiki` (token-AND, title-weighted). New entities auto-index.
@@ -128,7 +128,8 @@ An entity is "done" only when ALL hold:
 - **2026-06-22 — Batch 1 (MLBB core):** 14 entities live. MLBB+HoK games, 5 roles, SRG/Vamos/Homebois, MPL/MSC/KIC, Yums. blog→wiki on #91570/#91597/#91598/#91599 + BM #91657–91662 + #91660 (6-link role hub); Team Vamos anchors on #91570/#91662. All verified live.
 - **2026-06-22 — Batch 2 (MLBB deepen):** +10 entities (24 total). SRG S17 roster players (Kramm/Sekys/Stormie/Innocent/Unii — verified handles+roles+nationality, no real names) + Yums nationality added; M-Series World Championship (latest M7 = Aurora PH 4–0, M6 = ONIC PH); general glossary meta/patch/draft/rank-tiers. Verified MSC 2026 entity is CORRECT vs Liquipedia (25 teams/1 Jul–1 Aug — no edit). MPL entity now lists all 8 S17 franchise teams. Graph fully wired (roster↔roles↔team↔league). Pushed b1e20ab, all 10 pages verified 200 live. blog→wiki: #91570 expanded to 6 links (+Yums MVP, +M-Series) — applied & verified live public.
 - **2026-06-22 — Batch 3 (HoK deepen):** +2 tournaments (26 total) — MY Honor of Kings League (MKL; Spring 2026 3rd ed., champion All Gamers Global, US$60k) + Honor of Kings World Cup 2026 (KWC at EWC 26, Paris 30 Jul–8 Aug, US$3M, 20 teams, def. AG.AL). Wired into HoK game (body linkified) + KIC + homebois (HBSE core → Geekay in MKL 2026). KIC podium re-verified all-MY (HBSE/Nova/Alpha). **Deliberately deferred standalone HoK team pages** (Nova/Alpha/AG.AL) — org nationality is muddy (AG.AL called a Chinese org yet won the Malaysian MKL; "Nova" is a global brand). Needs per-org identity verification first. Pushed a0da16d, both pages 200 live. blog→wiki: #91598 expanded to 5 links (+MKL, +HoK World Cup) — applied & verified live public.
-- _next: Batch 4 (govt/orgs — approve `orgs` type first)._
+- **2026-06-22 — Batch 4 (institutional/govt):** added 6th entity type **`orgs`** (Organization, with `schemaTypeOverride` for GovernmentOrganization/SportsOrganization/GovernmentService) in wiki.ts. +6 org entities (32 total): KBS (ministry, Min. Dr. Mohammed Taufiq Johari), MESF (OCM-recognised national body), Esports Integrated/ESI (KBS agency, runs MEL + DEK), NADI (MCMC ~1,099 centres + NADI E-Sukan grassroots), DEK (RM1m grant, RM5k–20k/project, 2026 window closed), MEAP (RM500k intl. accelerator). Corrected master-plan "MEsA"→MESF. NADI: no acronym expansion asserted. All official URLs verified. Build green.
+- _next: deploy Batch 4 (push) → crosslink govt posts #91561/#91564/#91565 → Batch 5 (Free Fire)._
 
 **Deferred HoK gap-fill:** verified team pages for KIC/MKL orgs (Nova, Alpha Gaming, All Gamers Global) once each org's nationality/identity is confirmed; optional HoK-specific glossary (lane/objective names — memory flags these LOW-confidence).
 
@@ -138,6 +139,8 @@ An entity is "done" only when ALL hold:
 
 ## 8. Open items / decisions pending
 
-- [ ] Approve `orgs` (Organization) as 6th entity type (Batch 4) — or fold govt programmes into glossary.
-- [ ] Confirm which MY MLBB orgs beyond SRG/Vamos/Homebois are franchise-current for S17 (verify before seeding).
+- [x] ~~Approve `orgs` type~~ — DONE Batch 4 (Organization + schemaTypeOverride).
+- [x] ~~Confirm S17 franchise teams~~ — verified (8 teams listed on MPL entity); 6 still need standalone pages.
+- [ ] HoK team pages (Nova/Alpha/AG.AL) — pending per-org nationality verification.
+- [ ] Asian Games 2026 esports tournament entity — needs live qualifier verification (Cluster 1 / news).
 - [ ] Sim-racing: model as game entities per sim title, or one "Sim racing" hub + KITAMEN offering? (decide at Batch 8).
