@@ -126,7 +126,10 @@ An entity is "done" only when ALL hold:
 ## 7. Progress ledger
 
 - **2026-06-22 — Batch 1 (MLBB core):** 14 entities live. MLBB+HoK games, 5 roles, SRG/Vamos/Homebois, MPL/MSC/KIC, Yums. blog→wiki on #91570/#91597/#91598/#91599 + BM #91657–91662 + #91660 (6-link role hub); Team Vamos anchors on #91570/#91662. All verified live.
-- _next: Batch 2 — MLBB deepen._
+- **2026-06-22 — Batch 2 (MLBB deepen):** +10 entities (24 total). SRG S17 roster players (Kramm/Sekys/Stormie/Innocent/Unii — verified handles+roles+nationality, no real names) + Yums nationality added; M-Series World Championship (latest M7 = Aurora PH 4–0, M6 = ONIC PH); general glossary meta/patch/draft/rank-tiers. Verified MSC 2026 entity is CORRECT vs Liquipedia (25 teams/1 Jul–1 Aug — no edit). MPL entity now lists all 8 S17 franchise teams. Graph fully wired (roster↔roles↔team↔league). Build green; committed, NOT yet pushed. blog→wiki crosslinks for players/M-series still TODO.
+- _next: deploy Batch 2 (push) → crosslink #91570 to roster/M-series → Batch 3 (HoK deepen)._
+
+**Remaining MLBB gap-fill (later):** full pages for the other 6 S17 franchise teams (Invictus Gaming, Bigetron MY by VIT, RRQ Tora, Team Rey, AC Esports, Team Flash) — need per-team placement verification before seeding.
 
 ---
 
