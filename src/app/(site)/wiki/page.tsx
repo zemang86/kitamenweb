@@ -3,8 +3,14 @@ import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
 import { FadeIn } from "@/components/home2/FadeIn";
 import { EntityCard } from "@/components/wiki/EntityCard";
+import { WikiSearch } from "@/components/wiki/WikiSearch";
 import { site } from "@/lib/site";
-import { WIKI_TYPES, listEntities, breadcrumbJsonLd } from "@/lib/wiki";
+import {
+  WIKI_TYPES,
+  listEntities,
+  searchIndex,
+  breadcrumbJsonLd,
+} from "@/lib/wiki";
 
 const title = "Malaysia Esports Wiki";
 const description =
@@ -30,6 +36,8 @@ export default async function WikiHome() {
     })),
   );
 
+  const index = await searchIndex();
+
   const jsonLd = breadcrumbJsonLd([
     { name: "Home", path: "" },
     { name: "Wiki", path: "/wiki" },
@@ -49,6 +57,9 @@ export default async function WikiHome() {
             <p className="text-body-lg mt-8 max-w-[640px] text-zinc-400">
               {description}
             </p>
+            <div className="mt-10">
+              <WikiSearch index={index} />
+            </div>
           </FadeIn>
 
           {sections.map(({ type, entities }) => (

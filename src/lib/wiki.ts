@@ -154,6 +154,36 @@ export async function listEntities(
     .sort((a, b) => a.meta.title.localeCompare(b.meta.title));
 }
 
+/** One flat, serialisable record per published entity — shipped to the client search box. */
+export type WikiSearchDoc = {
+  type: WikiTypeKey;
+  typeLabel: string;
+  slug: string;
+  href: string;
+  title: string;
+  summary: string;
+  tags: string[];
+};
+
+/** Build the full client-side search index (every non-draft entity, all types). */
+export async function searchIndex(): Promise<WikiSearchDoc[]> {
+  const perType = await Promise.all(
+    WIKI_TYPES.map(async (t) => {
+      const entities = await listEntities(t.key);
+      return entities.map(({ slug, meta }) => ({
+        type: t.key,
+        typeLabel: t.label,
+        slug,
+        href: entityPath(t.key, slug),
+        title: meta.title,
+        summary: meta.summary,
+        tags: meta.tags ?? [],
+      }));
+    }),
+  );
+  return perType.flat();
+}
+
 /** Every published (type, slug) pair — for generateStaticParams + sitemap. Skips drafts. */
 export async function allEntityParams(): Promise<
   { type: WikiTypeKey; slug: string }[]
