@@ -31,6 +31,8 @@ export type WikiMeta = {
   related?: WikiLink[];
   /** Visible reference links that back the facts on the page (trust / E-E-A-T). */
   sources?: WikiLink[];
+  /** Further reading on the KITAMEN blog (kitamen.my) — keeps readers on-brand. */
+  reading?: WikiLink[];
   tags?: string[];
   /** Hide from indexes + sitemap until the entry is verified/ready. */
   draft?: boolean;

@@ -113,6 +113,19 @@ export default async function WikiEntity({
                 </>
               ) : null}
 
+              {meta.reading?.length ? (
+                <>
+                  <h2>From the KITAMEN blog</h2>
+                  <ul>
+                    {meta.reading.map((r) => (
+                      <li key={r.href}>
+                        <a href={r.href}>{r.label}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              ) : null}
+
               {meta.sources?.length ? (
                 <>
                   <h2>Sources</h2>
